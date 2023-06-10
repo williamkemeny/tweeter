@@ -59,13 +59,14 @@
     <main class="container">
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
-        <form action="/tweets/" method="POST">
+        <form action="/tweets" method="POST">
           <div class="input-container">
-            <input
+            <textarea
               class="tweet-text"
               id="tweet-text"
               name="tweet-text"
-            ></input>
+              required=""
+            ></textarea>
             <label for="tweet-text">What are you humming about?</label>
           </div>
           <div class="tweet-additions">
@@ -75,5 +76,6 @@
         </form>
       </section>
     </main>
+    <script src="/scripts/composer-char-counter.js"></script>
   </body>
 </html>
