@@ -1,0 +1,63 @@
+.container {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.new-tweet {
+  width: 90%;
+}
+
+.tweet-text {
+  border-style: hidden;
+  border-bottom: 5px solid #545149;
+  background-color: #f4f1ec;
+  min-width: 100%;
+  resize: none;
+  font-weight: 600;
+  outline: none;
+}
+
+.tweet-button {
+  background: #4056a1;
+  color: #ffffff;
+  font-family: "Bungee", sans-serif;
+  border-style: hidden;
+  max-height: 50px;
+}
+
+.tweet-button:hover {
+  background: #222f5b;
+  transition: 0.25s ease;
+}
+
+.tweet-button:active {
+  background: #4056a1;
+  max-height: 48px;
+  transition: 0.25s ease;
+}
+
+.tweet-additions {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+}
+
+.input-container {
+  position: relative;
+  margin-bottom: 25px;
+}
+
+.input-container label {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  transition: all 0.5s ease-in-out;
+}
+
+.input-container input:focus ~ label {
+  top: -12px;
+  font-size: 12px;
+  outline: none;
+}

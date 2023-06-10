@@ -1,12 +1,12 @@
 nav {
   font-family: "Source Sans Pro", sans-serif;
   display: flex;
+  justify-content: space-between;
   background: #4056a1;
   color: #ffffff;
   height: 120px;
   position: fixed;
   width: 100%;
-  justify-content: space-between;
 }
 
 b {
@@ -29,10 +29,11 @@ b {
   margin: 0 1.5em 0 1.5em;
 }
 
-.red {
-  color: red;
-}
-.right-nav:hover {
+i:hover {
   padding-top: 4px;
   transition: 0.25s ease;
+}
+
+.red {
+  color: red;
 }
