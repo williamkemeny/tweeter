@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/tweet-log.css" type="text/css" />
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
@@ -39,12 +40,12 @@
       <span class="left-nav">Tweeter</span>
       <div class="right-nav">
         <span><b>Write</b>a new tweet</span>
-        <i class="fa-solid fa-angles-down red"></i>
+        <i class="fa-solid fa-angles-down red-arrow"></i>
       </div>
     </nav>
 
     <!-- Header -->
-    <header>
+    <header class="head-page">
       <div>
         <img src="/images/profile-hex.png" />
       </div>
@@ -75,7 +76,9 @@
           </div>
         </form>
       </section>
+      <section class="tweets-container" id="tweets-container"></section>
     </main>
     <script src="/scripts/composer-char-counter.js"></script>
+    <script src="/scripts/client.js"></script>
   </body>
 </html>

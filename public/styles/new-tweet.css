@@ -5,6 +5,7 @@
   align-items: center;
   justify-content: center;
 }
+
 .new-tweet {
   width: 90%;
 }
@@ -25,6 +26,7 @@
   color: #ffffff;
   font-family: "Bungee", sans-serif;
   border-style: hidden;
+  padding: 5px;
   max-height: 50px;
 }
 
@@ -67,4 +69,8 @@
   top: -12px;
   font-size: 12px;
   outline: none;
+}
+
+.counter {
+  font-family: "Bungee", sans-serif;
 }

@@ -1,0 +1,64 @@
+.tweets-container {
+  font-family: "Source Sans Pro", sans-serif;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  width: 80%;
+  font-size: 15px;
+}
+
+.tweet-box {
+  padding: 1rem;
+  margin: 1.5rem 0 0 0;
+  border: 5px solid #545149;
+}
+
+.tweet-box:hover {
+  box-shadow: 5px 10px #524848;
+}
+
+.tweet-head {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.tweet-foot {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2px;
+  margin-bottom: 1rem;
+}
+.date {
+  margin-top: 2px;
+}
+
+.left-tweet {
+  display: flex;
+}
+
+.right-tweet {
+  display: flex;
+}
+
+.avatar-img {
+  width: 5rem;
+  height: 5rem;
+  margin: 0 10px 0 0;
+}
+
+.handle {
+  color: rgba(152, 152, 195, 0.771);
+  font-size: 22px;
+}
+
+.tweet-post {
+  font-size: 22px;
+}
+
+.icons {
+  color: #4056a1;
+}
+
+.far {
+  margin: 0 5px 0 5px;
+}
