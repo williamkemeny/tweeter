@@ -1,11 +1,5 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
-
 // Fake data taken from initial-tweets.json
-const data = [
+const testData = [
   {
     user: {
       name: "Newton",
@@ -46,7 +40,7 @@ const createTweetElement = function (tweet) {
   <hr />
   <footer class="tweet-foot">
     <div class="left-tweet">
-      <p class="date">${tweet.created_at}</p>
+      <p class="date">${timeago.format(tweet.created_at)}</p>
     </div>
     <div class="right-tweet icons">
       <i class="far fa-flag" id="flag"></i>
@@ -68,5 +62,5 @@ const renderTweets = function (tweets) {
 };
 
 $(document).ready(function () {
-  renderTweets(data);
+  renderTweets(testData);
 });

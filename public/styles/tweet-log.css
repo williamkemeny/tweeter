@@ -1,13 +1,13 @@
 .tweets-container {
   font-family: "Source Sans Pro", sans-serif;
   margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.2rem;
   width: 80%;
   font-size: 15px;
 }
 
 .tweet-box {
-  padding: 1rem;
+  padding: 1rem 1rem 0 1rem;
   margin: 1.5rem 0 0 0;
   border: 5px solid #545149;
 }
@@ -65,5 +65,5 @@ hr {
 }
 
 .far {
-  margin: 0 5px 0 5px;
+  margin: 0 6px 0 6px;
 }
