@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  $("#tweet-text").on("keydown", function (e) {
+  $("#tweet-text").on("keyup", function (e) {
     //Get current count of the string in the text area
     const currCount = $(this).val().length;
     //Get the value of the couter
