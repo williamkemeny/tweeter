@@ -1,29 +1,3 @@
-// Fake data taken from initial-tweets.json
-const testData = [
-  {
-    user: {
-      name: "Newton",
-      avatars: "https://i.imgur.com/73hZDYK.png",
-      handle: "@SirIsaac",
-    },
-    content: {
-      text: "If I have seen further it is by standing on the shoulders of giants",
-    },
-    created_at: 1461116232227,
-  },
-  {
-    user: {
-      name: "Descartes",
-      avatars: "https://i.imgur.com/nlhLi3I.png",
-      handle: "@rd",
-    },
-    content: {
-      text: "Je pense , donc je suis",
-    },
-    created_at: 1461113959088,
-  },
-];
-
 // Create the element tweet HTML code
 const createTweetElement = function (tweet) {
   const $tweet = `
@@ -68,19 +42,42 @@ const renderTweets = function (tweets) {
 //When the page loads it renders the tweets from the data and when someone submits the form it sends it to the ajax file
 
 $(document).ready(function () {
-  renderTweets(testData);
+  const loadTweets = function () {
+    $.get("/tweets")
+      .then((res) => {
+        renderTweets(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
+  $(".right-nav").on("click", function (event) {
+    $(".new-tweet").toggle(1000);
+  });
+
   $("#form-id").on("submit", function (event) {
     event.preventDefault();
     //Get the text from the twet form
     const formData = $("#form-id").serialize();
     //Get the text to compare values
     const $text = $("#tweet-text").val();
-    $.post("/tweets", formData)
-      .then((res) => {
-        console.log(res);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+
+    // don't need !$text.length condition since required is set to "" which allows my label for the textarea to move above the textarea
+    if ($text.length > 140) {
+      $(".error").slideDown("slow").show().delay(1400).slideUp("slow");
+    } else {
+      $.post("/tweets", formData)
+        .then(() => {
+          $("#form-id").trigger("reset");
+          $(".counter").text(140);
+          $("#tweets-container").empty();
+          loadTweets();
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
   });
+  loadTweets();
 });
