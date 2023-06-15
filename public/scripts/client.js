@@ -24,12 +24,15 @@ const testData = [
   },
 ];
 
+// Create the element tweet HTML code
 const createTweetElement = function (tweet) {
   const $tweet = `
   <article class="tweet-box">
     <header class="tweet-head">
     <div class="left-tweet">
-      <img class = "avatar-img" src="${tweet.user.avatars}" />
+      <img class = "avatar-img" alt=" An avatar img for the user" src="${
+        tweet.user.avatars
+      }" />
       <h1>${tweet.user.name}</h1>
     </div>
     <div class="right-tweet">
@@ -53,6 +56,7 @@ const createTweetElement = function (tweet) {
   return $tweet;
 };
 
+//pushes the tweets to the page
 const renderTweets = function (tweets) {
   const $container = $("#tweets-container");
   tweets.forEach((tweet) => {
@@ -61,6 +65,22 @@ const renderTweets = function (tweets) {
   });
 };
 
+//When the page loads it renders the tweets from the data and when someone submits the form it sends it to the ajax file
+
 $(document).ready(function () {
   renderTweets(testData);
+  $("#form-id").on("submit", function (event) {
+    event.preventDefault();
+    //Get the text from the twet form
+    const formData = $("#form-id").serialize();
+    //Get the text to compare values
+    const $text = $("#tweet-text").val();
+    $.post("/tweets", formData)
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  });
 });

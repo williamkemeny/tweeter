@@ -66,13 +66,12 @@
 
     <main class="container">
       <section class="new-tweet">
-        <h2>Compose Tweet</h2>
-        <form action="/tweets" method="POST">
+        <form class="tweet-form" id="form-id" method="POST" action="/tweets/">
           <div class="input-container">
             <textarea
               class="tweet-text"
               id="tweet-text"
-              name="tweet-text"
+              name="text"
               required=""
             ></textarea>
             <label for="tweet-text">What are you humming about?</label>
