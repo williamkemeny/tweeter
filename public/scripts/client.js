@@ -53,7 +53,7 @@ $(document).ready(function () {
   };
 
   $(".right-nav").on("click", function (event) {
-    $(".new-tweet").toggle(1000);
+    $(".new-tweet").slideToggle(1000);
   });
 
   $("#form-id").on("submit", function (event) {
