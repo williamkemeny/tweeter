@@ -1,3 +1,10 @@
+//Used to create safe tags so people can't inject jquery
+const escape = function (str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+};
+
 // Create the element tweet HTML code
 const createTweetElement = function (tweet) {
   const $tweet = `
@@ -13,7 +20,7 @@ const createTweetElement = function (tweet) {
       <h1 class="handle">${tweet.user.handle}</h1>
     </div>
   </header>
-  <p class="tweet-post">${tweet.content.text}</p>
+  <p class="tweet-post">${escape(tweet.content.text)}</p>
   <hr />
   <footer class="tweet-foot">
     <div class="left-tweet">
