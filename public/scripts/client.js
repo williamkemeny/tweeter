@@ -69,9 +69,12 @@ $(document).ready(function () {
     const formData = $("#form-id").serialize();
     //Get the text to compare values
     const $text = $("#tweet-text").val();
-
     // don't need !$text.length condition since required is set to "" which allows my label for the textarea to move above the textarea
     if ($text.length > 140) {
+      $(".error").text("Your tweet must be 140 characters maximum");
+      $(".error").slideDown("slow").show().delay(1400).slideUp("slow");
+    } else if ($text.length === 0) {
+      $(".error").text("No text present");
       $(".error").slideDown("slow").show().delay(1400).slideUp("slow");
     } else {
       $.post("/tweets", formData)
