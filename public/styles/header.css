@@ -3,9 +3,10 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding-top: 150px;
+  padding-top: 130px;
   height: 530px;
   width: 100%;
   background-color: #cc8800;
   background-image: url("https://www.transparenttextures.com/patterns/arches.png");
+  margin-bottom: 15px;
 }
